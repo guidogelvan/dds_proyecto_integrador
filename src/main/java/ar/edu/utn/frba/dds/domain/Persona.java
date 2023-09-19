@@ -13,11 +13,12 @@ import javax.persistence.*;
 public abstract class Persona implements Contactable {
     @EmbeddedId
     private Persistente id;
-    @Column(name = "cuitCuil")
+    @Column(name = "cuit_cuil")
     private String cuitCuil;
     @Embedded
     private Direccion direccion;
 
+    @Column(name = "medio_comunicacion")
     @Convert(converter = MedioDeComunicacionConverter.class)
     private MedioDeComunicacion medioPreferido;
 

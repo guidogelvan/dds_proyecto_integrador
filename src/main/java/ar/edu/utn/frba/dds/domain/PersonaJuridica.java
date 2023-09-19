@@ -1,25 +1,25 @@
 package ar.edu.utn.frba.dds.domain;
 
-import ar.edu.utn.frba.dds.domain.converter.LocalDateConverter;
+import ar.edu.utn.frba.dds.converters.LocalDateConverter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 @Entity
-@DiscriminatorValue("Persona Juridica")
+@DiscriminatorValue("persona_juridica")
 public class PersonaJuridica extends Persona {
     @ElementCollection
-    @CollectionTable(name="emails", joinColumns=@JoinColumn(name="persona_id"))
+    @CollectionTable(name="email_contacto", joinColumns=@JoinColumn(name="persona_id"))
+    @Column(name = "email")
     private List<String> emailsDeContacto;
-    @Column(name = "fechaConstitucion", columnDefinition = "DATE")
-
+    @Column(name = "fecha_nacimiento", columnDefinition = "DATE")
     @Convert(converter = LocalDateConverter.class)
     private LocalDate fechaConstitucion;
-    @Column(name = "razonSocial")
-
+    @Column(name = "razon_social")
     private String razonSocial;
     @ElementCollection
-    @CollectionTable(name="telefonos", joinColumns=@JoinColumn(name="persona_id"))
+    @CollectionTable(name = "telefono_contacto", joinColumns = @JoinColumn(name = "persona_id"))
+    @Column(name = "telefono")
     private List<String> telefonosDeContacto;
 
 

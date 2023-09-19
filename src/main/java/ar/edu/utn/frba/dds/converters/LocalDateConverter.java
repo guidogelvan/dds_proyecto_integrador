@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.dds.domain.converter;
+package ar.edu.utn.frba.dds.converters;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
