@@ -6,11 +6,16 @@ import javax.persistence.*;
 
 public class Direccion{
 
-    private Long id;
+
+    @Column(name = "altura")
     private Integer altura;
+    @Column(name = "calle")
     private String calle;
+    @Column(name = "localidadBarrio")
     private String localidadBarrio;
+    @Column(name = "municipioComuna")
     private String municipioComuna;
+    @Column(name = "provincia")
     private String provincia;
 
     public String leyendaCompleta(){
