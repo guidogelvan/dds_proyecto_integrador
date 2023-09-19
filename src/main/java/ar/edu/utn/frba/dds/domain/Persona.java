@@ -9,12 +9,12 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "tipo")
 
-public abstract class Persona implements Contactable{
+public abstract class Persona implements Contactable {
     @EmbeddedId
     private Persistente id;
     @Column(name = "cuitCuil")
     private String cuitCuil;
-    @Column(name = "direccion")
+    @Embedded
     private Direccion direccion;
     @Column(name = "medioPreferido")
     private MedioDeComunicacion medioPreferido;

@@ -1,9 +1,8 @@
 package ar.edu.utn.frba.dds.domain;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import ar.edu.utn.frba.dds.domain.converter.LocalDateConverter;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -13,7 +12,7 @@ public class PersonaFisica extends Persona {
     private String apellido;
     @Column(name = "nombre")
     private String nombre;
-    @Column(name = "fechaNacimiento", columnDefinition = "DATE")
+    @Convert(converter = LocalDateConverter.class)
     private LocalDate fechaNacimiento;
     @Column(name = "email")
     private String email;

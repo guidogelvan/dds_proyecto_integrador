@@ -1,5 +1,7 @@
 package ar.edu.utn.frba.dds.domain;
 
+import ar.edu.utn.frba.dds.domain.converter.LocalDateConverter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
@@ -12,6 +14,7 @@ public class PersonaJuridica extends Persona {
     private List<String> emailsDeContacto;
     @Column(name = "fechaConstitucion", columnDefinition = "DATE")
 
+    @Convert(converter = LocalDateConverter.class)
     private LocalDate fechaConstitucion;
     @Column(name = "razonSocial")
 

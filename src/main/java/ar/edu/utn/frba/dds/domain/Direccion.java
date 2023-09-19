@@ -2,6 +2,7 @@ package ar.edu.utn.frba.dds.domain;
 
 import javax.persistence.*;
 
+@Embeddable
 
 public class Direccion{
 
