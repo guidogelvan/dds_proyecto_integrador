@@ -25,6 +25,12 @@
       <version>5.9.2</version>
       <scope>test</scope>
     </dependency>
+    <!-- JPA Persistence Dependencies -->
+    <dependency>
+      <groupId>io.github.flbulgarelli</groupId>
+      <artifactId>jpa-extras</artifactId>
+      <version>1.0.0-rc1</version>
+    </dependency>
 
   </dependencies>
 
